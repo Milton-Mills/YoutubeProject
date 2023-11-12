@@ -1,6 +1,19 @@
 .searchbox {
-  display: block;
-  margin-bottom: 3px;
+  flex: 1;
+  height: 35px;
+  padding-left: 10px;
+font-size: 17px;
+border-width: 1px;
+border-style: solid;
+border-color: rgb(158, 158, 158);
+border-radius: 2px;
+box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+width: 0;
+}
+
+.searchbox::placeholder{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
 }
 
 p {
@@ -8,13 +21,206 @@ p {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+body{
+  margin: 0;
+  padding-top: 40px;
+  padding-left: 85px;
+  padding-right: 20px;
+  border-color: rgb(194, 191, 191);
+background-color: rgba(243, 239, 239, 0.966);
+}
+.header{
+  padding-top: 4px;
+  height: 43px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgb(255, 255, 255);
+
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(230, 229, 229);
+  border-bottom-style: solid;
+  z-index: 10;
+}
+.sidebar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 43px;
+  background-color: rgb(255, 255, 255);
+  width: 75px;
+  z-index: 20;
+  padding-top: 5px;
+}
+
+.sidebar-link{
+height: 98px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.sidebar-link:hover {
+  background-color: rgb(240, 239, 239);
+cursor: pointer;
+}
+
+.sidebar-link img {
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+.sidebar-link div {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 10px;
+font-weight: 100;
+}
+
+.left-section{
+  display: flex;
+  align-items: center;
+}
+.hamburger {
+  height: 25px;
+  margin-left: 24px;
+  margin-right: 20px;
+}
+
+.youtubelogo {
+  height: 20px;
+}
+
+.middle-section{
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-left: 70px;
+  margin-right: 35px;
+  max-width: 500px;
+}
+.searchicon{
+height: 39px;
+width: 66px;
+background-color: rgb(240, 240, 240);
+border-width: 1px;
+border-style: solid;
+border-color: rgb(158, 158, 158) ;
+margin-left: -1px;
+margin-right: 10px;
+
+}
+
+.searchicon, .voiceicon, .upload-icon-container, .apps-container, .notifications-container{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  position: relative;
+}
+
+.searchicon .tooltip, .voiceicon .tooltip, .upload-icon-container .tooltip, .apps-container .tooltip, .notifications-container .tooltip{
+ font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  background-color: gray;
+  color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  bottom: -20px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.searchicon:hover .tooltip, .voiceicon:hover .tooltip, .upload-icon-container:hover .tooltip, .apps-container:hover .tooltip, .notifications-container:hover .tooltip{
+  opacity: 1;
+}
+
+.search-icon{
+  height: 25px;
+  
+}
+
+.voiceicon{
+  height: 39px;
+  width: 40px;
+  background-color: rgb(240, 240, 240);
+border: none;
+border-radius: 20px;
+background-color: rgb(184, 245, 94);
+}
+
+.voice-icon{
+  height: 23px;
+  
+  
+}
+
+.right-section{
+  display: flex;
+  align-items: center;
+  width: 250px;
+  justify-content: space-between;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.upload-icon{
+  height: 28px;
+}
+
+.apps-icon{
+  height: 28px;
+}
+
+.notifications-icon{
+  height: 28px;
+}
+
+.bell {
+  position: relative;
+}
+
+.notifications-count{
+position: absolute;
+top: -3px;
+right: -5px;
+background-color: red;
+color: white;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-size: 8px;
+padding-left: 5px;
+padding-right: 5px;
+padding-bottom: 2px;
+padding-top: 2px;
+border-radius: 15px;
+}
+
+.channel-icon{
+  height: 33px;
+  border-radius: 15px;
+}
+
 .thumbnail {
   width: 100%;
+  object-fit: cover;
 }
+
 
 .videotitle{
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-size: 14px;
   font-weight: bold;
   line-height: 20px;
@@ -30,11 +236,28 @@ p {
 }
 
 .thumbnailrow{
-  margin-bottom: 12px;
+  margin-bottom: 7px;
+  position: relative;
+}
+
+.video-time {
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 8px;
+  right: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 2px;
 }
 
 .profilepicture{
-  width: 40px;
+  width: 35px;
   border-radius: 36px;
 }
 
@@ -52,4 +275,16 @@ p {
   padding-right: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
+}
+
+@media (max-width: 700px) {
+  .video-grid{
+grid-template-columns: 1fr 1fr;
+  } 
+}
+
+@media (max-width: 800px) {
+  .video-grid{
+grid-template-columns: 1fr 1fr 1fr;
+  }
 }
